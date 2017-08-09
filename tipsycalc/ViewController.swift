@@ -15,6 +15,12 @@ class ViewController: UIViewController {
   @IBOutlet weak var billField: UITextField!
   @IBOutlet weak var tipControl: UISegmentedControl!
 
+  @IBOutlet weak var splitByTwo: UILabel!
+  @IBOutlet weak var splitByThree: UILabel!
+
+  @IBOutlet weak var splitByFour: UILabel!
+  @IBOutlet weak var splitByFive: UILabel!
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -36,7 +42,7 @@ class ViewController: UIViewController {
   @IBAction func tipRateRadioUpdate(_ sender: Any) {
     self.calculateTip()
   }
-  
+
   func calculateTip() {
     let tipPercentages = [0.15, 0.18, 0.2]
     let tipRate = tipPercentages[tipControl.selectedSegmentIndex]
@@ -46,6 +52,10 @@ class ViewController: UIViewController {
 
     tipAmount.text = String(format: "$%.2f", tip)
     totalLabel.text = String(format: "$%.2f", total)
+    splitByTwo.text = String(format: "$%.2f", total / 2 )
+    splitByThree.text = String(format: "$%.2f", total / 3)
+    splitByFour.text = String(format: "$%.2f", total / 4)
+    splitByFive.text = String(format: "$%.2f", total / 5)
   }
 }
 
