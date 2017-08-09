@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var tipAmount: UILabel!
+  @IBOutlet weak var totalLabel: UILabel!
+  @IBOutlet weak var billField: UITextField!
+  @IBOutlet weak var tipControl: UISegmentedControl!
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -21,8 +26,26 @@ class ViewController: UIViewController {
   }
 
   @IBAction func onTap(_ sender: Any) {
-    self.view.endEditing(true)
+    view.endEditing(true)
   }
 
+  @IBAction func inputChanged(_ sender: Any) {
+    self.calculateTip()
+  }
+
+  @IBAction func tipRateRadioUpdate(_ sender: Any) {
+    self.calculateTip()
+  }
+  
+  func calculateTip() {
+    let tipPercentages = [0.15, 0.18, 0.2]
+    let tipRate = tipPercentages[tipControl.selectedSegmentIndex]
+    let billValue = Double(billField.text!) ?? 0
+    let tip = billValue * tipRate
+    let total = billValue + tip
+
+    tipAmount.text = String(format: "$%.2f", tip)
+    totalLabel.text = String(format: "$%.2f", total)
+  }
 }
 
