@@ -196,6 +196,7 @@
 				TargetAttributes = {
 					B0B80C781F3B97A900F9DEF3 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4AEPYTECMW;
 						ProvisioningStyle = Automatic;
 					};
 					B0B80C8F1F3B97A900F9DEF3 = {
@@ -418,6 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4AEPYTECMW;
 				INFOPLIST_FILE = tipsycalc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.donotshake.tipsycalc;
@@ -430,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4AEPYTECMW;
 				INFOPLIST_FILE = tipsycalc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.donotshake.tipsycalc;
@@ -511,6 +514,7 @@
 				B0B80CA61F3B97AA00F9DEF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0B80CA71F3B97AA00F9DEF3 /* Build configuration list for PBXNativeTarget "tipsycalcTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +523,7 @@
 				B0B80CA91F3B97AA00F9DEF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0B80CAA1F3B97AA00F9DEF3 /* Build configuration list for PBXNativeTarget "tipsycalcUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +532,7 @@
 				B0B80CAC1F3B97AA00F9DEF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
