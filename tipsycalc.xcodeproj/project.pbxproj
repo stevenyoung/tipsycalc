@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B057E4C41F3BD536005A773D /* Hack-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B057E4C01F3BD536005A773D /* Hack-Bold.ttf */; };
+		B057E4C51F3BD536005A773D /* Hack-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B057E4C11F3BD536005A773D /* Hack-BoldItalic.ttf */; };
+		B057E4C61F3BD536005A773D /* Hack-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B057E4C21F3BD536005A773D /* Hack-Italic.ttf */; };
+		B057E4C71F3BD536005A773D /* Hack-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B057E4C31F3BD536005A773D /* Hack-Regular.ttf */; };
 		B0B80C7D1F3B97A900F9DEF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B80C7C1F3B97A900F9DEF3 /* AppDelegate.swift */; };
 		B0B80C7F1F3B97A900F9DEF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B80C7E1F3B97A900F9DEF3 /* ViewController.swift */; };
 		B0B80C821F3B97A900F9DEF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B80C801F3B97A900F9DEF3 /* Main.storyboard */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B057E4C01F3BD536005A773D /* Hack-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hack-Bold.ttf"; sourceTree = "<group>"; };
+		B057E4C11F3BD536005A773D /* Hack-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hack-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B057E4C21F3BD536005A773D /* Hack-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hack-Italic.ttf"; sourceTree = "<group>"; };
+		B057E4C31F3BD536005A773D /* Hack-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hack-Regular.ttf"; sourceTree = "<group>"; };
 		B0B80C791F3B97A900F9DEF3 /* tipsycalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipsycalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B80C7C1F3B97A900F9DEF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B80C7E1F3B97A900F9DEF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,9 +84,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B057E4C81F3BD5E2005A773D /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B057E4C01F3BD536005A773D /* Hack-Bold.ttf */,
+				B057E4C11F3BD536005A773D /* Hack-BoldItalic.ttf */,
+				B057E4C21F3BD536005A773D /* Hack-Italic.ttf */,
+				B057E4C31F3BD536005A773D /* Hack-Regular.ttf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
 		B0B80C701F3B97A900F9DEF3 = {
 			isa = PBXGroup;
 			children = (
+				B057E4C81F3BD5E2005A773D /* fonts */,
 				B0B80C7B1F3B97A900F9DEF3 /* tipsycalc */,
 				B0B80C931F3B97A900F9DEF3 /* tipsycalcTests */,
 				B0B80C9E1F3B97A900F9DEF3 /* tipsycalcUITests */,
@@ -238,6 +258,10 @@
 			files = (
 				B0B80C8A1F3B97A900F9DEF3 /* LaunchScreen.storyboard in Resources */,
 				B0B80C871F3B97A900F9DEF3 /* Assets.xcassets in Resources */,
+				B057E4C71F3BD536005A773D /* Hack-Regular.ttf in Resources */,
+				B057E4C51F3BD536005A773D /* Hack-BoldItalic.ttf in Resources */,
+				B057E4C61F3BD536005A773D /* Hack-Italic.ttf in Resources */,
+				B057E4C41F3BD536005A773D /* Hack-Bold.ttf in Resources */,
 				B0B80C821F3B97A900F9DEF3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
