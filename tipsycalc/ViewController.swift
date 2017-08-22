@@ -20,6 +20,9 @@ class ViewController: UIViewController {
 
   @IBOutlet weak var splitByFour: UILabel!
   @IBOutlet weak var splitByFive: UILabel!
+  @IBAction func saveButton(_ sender: Any) {
+    self.saveRestaurantVisit()
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -57,5 +60,21 @@ class ViewController: UIViewController {
     splitByFour.text = String(format: "$%.2f", total / 4)
     splitByFive.text = String(format: "$%.2f", total / 5)
   }
+
+  func saveRestaurantVisit() {
+    let visit = RestaurantVisit(spot: "Eat@Joes",
+                                tipAmount: (tipAmount.text!),
+                                total: (billField.text!))
+    visit.save()
+
+  }
 }
 
+struct RestaurantVisit {
+  var spot: String
+  var tipAmount: String!
+  var total: String!
+  func save() -> Void {
+    print("saving visit")
+  }
+}
