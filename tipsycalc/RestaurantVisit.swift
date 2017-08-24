@@ -20,6 +20,7 @@ class RestaurantVisit: NSObject, NSCoding {
   //MARK: Initialization
   init?(name: String!, tip: Double!, bill: Double!) {
     print(name, tip, bill)
+
     self.restaurantName = name
     self.tipAmount = tip
     self.billAmount = bill

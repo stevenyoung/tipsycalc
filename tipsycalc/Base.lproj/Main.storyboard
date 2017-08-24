@@ -183,12 +183,37 @@
                     <view key="view" contentMode="scaleToFill" id="nwN-pi-c7P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IXa-ox-hV5">
+                                <rect key="frame" x="25" y="260" width="325" height="29"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handleTipControlUpdate:" destination="NLZ-jN-ZMt" eventType="valueChanged" id="vfK-xK-AV2"/>
+                                    <action selector="tipRateRadioUpdate:" destination="BYZ-38-t0r" eventType="valueChanged" id="4zm-j0-OF3"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a Default Tip Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glr-Mc-74R">
+                                <rect key="frame" x="85" y="209" width="225" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="tipControl" destination="IXa-ox-hV5" id="KT7-CM-Hhv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckR-c1-peh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1673" y="130"/>
+            <point key="canvasLocation" x="1672.5" y="129.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tnd-ft-SFJ">

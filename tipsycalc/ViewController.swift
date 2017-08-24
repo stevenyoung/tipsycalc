@@ -26,11 +26,11 @@ class ViewController: UIViewController {
   }
 
   var thisVisit: RestaurantVisit!
-  var tipRate: Double = 0.15
+  var tipRate: Double? = 0.15
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a  nib.
     self.thisVisit = RestaurantVisit(name: "Eat@Joes", tip: self.tipRate, bill: 0.0)
   }
 
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
 
     self.thisVisit.tipAmount = tip
     self.thisVisit.billAmount = total
-    self.thisVisit.tipRate = tipRate 
+    self.thisVisit.tipRate = tipRate
 
     tipAmount.text = String(format: "$%.2f", tip)
     totalLabel.text = String(format: "$%.2f", total)
@@ -73,13 +73,25 @@ class ViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     print("view will appear")
+    let tipRate = UserDefaults.standard.double(forKey: "tip_rate")
+    switch tipRate {
+    case 0.15:
+      tipControl.selectedSegmentIndex = 0
+    case 0.18:
+      tipControl.selectedSegmentIndex = 1
+    case 0.2:
+      tipControl.selectedSegmentIndex = 2
+    default:
+      print(UserDefaults.standard.double(forKey: "tip_rate"))
+    }
   }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     print("view did appear")
-//    let defaults = UserDefaults.standard
-//    let tip_rate = defaults.double(forKey: "tip_rate")
+    //    let defaults = UserDefaults.standard
+    //    let tip_rate = defaults.double(forKey: "tip_rate")
+
   }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -103,7 +115,7 @@ class ViewController: UIViewController {
     } else {
       os_log("failed to save visit", log: OSLog.default, type: .debug)
     }
-//    visit.save()
+    //    visit.save()
   }
 }
 
