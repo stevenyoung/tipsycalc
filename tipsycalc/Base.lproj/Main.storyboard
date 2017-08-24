@@ -145,7 +145,13 @@
                             <outletCollection property="gestureRecognizers" destination="jf4-9O-MDs" appends="YES" id="zZA-Cv-Olp"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="tipsycalc" id="d0W-ED-nzQ"/>
+                    <navigationItem key="navigationItem" title="tipsycalc" id="d0W-ED-nzQ">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="SWS-XX-8DU">
+                            <connections>
+                                <segue destination="NLZ-jN-ZMt" kind="show" id="XgN-Hm-ywM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="vhJ-1J-gIp" id="grd-AI-7eL"/>
                         <outlet property="splitByFive" destination="FZe-c2-KJg" id="Vot-NM-9Lj"/>
@@ -166,12 +172,30 @@
             </objects>
             <point key="canvasLocation" x="962.31884057971024" y="143.47826086956522"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="vBy-Wa-WDd">
+            <objects>
+                <viewController id="NLZ-jN-ZMt" customClass="SettingsViewController" customModule="tipsycalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o6F-cE-Goq"/>
+                        <viewControllerLayoutGuide type="bottom" id="21e-eh-sBQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nwN-pi-c7P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckR-c1-peh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1673" y="130"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tnd-ft-SFJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gbi-98-Zit" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="E5D-jK-N1N">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E5D-jK-N1N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

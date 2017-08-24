@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class ViewController: UIViewController {
 
@@ -24,9 +25,13 @@ class ViewController: UIViewController {
     self.saveRestaurantVisit()
   }
 
+  var thisVisit: RestaurantVisit!
+  var tipRate: Double = 0.15
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    self.thisVisit = RestaurantVisit(name: "Eat@Joes", tip: self.tipRate, bill: 0.0)
   }
 
   override func didReceiveMemoryWarning() {
@@ -47,11 +52,15 @@ class ViewController: UIViewController {
   }
 
   func calculateTip() {
-    let tipPercentages = [0.15, 0.18, 0.2]
+    let tipPercentages = RestaurantVisit.tipPercentages
     let tipRate = tipPercentages[tipControl.selectedSegmentIndex]
     let billValue = Double(billField.text!) ?? 0
     let tip = billValue * tipRate
     let total = billValue + tip
+
+    self.thisVisit.tipAmount = tip
+    self.thisVisit.billAmount = total
+    self.thisVisit.tipRate = tipRate 
 
     tipAmount.text = String(format: "$%.2f", tip)
     totalLabel.text = String(format: "$%.2f", total)
@@ -61,20 +70,49 @@ class ViewController: UIViewController {
     splitByFive.text = String(format: "$%.2f", total / 5)
   }
 
-  func saveRestaurantVisit() {
-    let visit = RestaurantVisit(spot: "Eat@Joes",
-                                tipAmount: (tipAmount.text!),
-                                total: (billField.text!))
-    visit.save()
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    print("view will appear")
+  }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    print("view did appear")
+//    let defaults = UserDefaults.standard
+//    let tip_rate = defaults.double(forKey: "tip_rate")
+  }
+
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    print("view will disappear")
+  }
+
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    print("view did disappear")
+  }
+
+  private func saveRestaurantVisit() {
+    let tip = Double(self.tipAmount.text!)
+    let bill = Double(self.billField.text!)
+    let visit = RestaurantVisit(name: "Eat@Joes", tip: tip, bill: bill)
+    print("saving visit", visit ?? "not?")
+    let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(visit, toFile: RestaurantVisit.ArchiveURL.path)
+    if isSuccessfulSave {
+      os_log("visit saved", log: OSLog.default, type: .debug)
+    } else {
+      os_log("failed to save visit", log: OSLog.default, type: .debug)
+    }
+//    visit.save()
   }
 }
 
-struct RestaurantVisit {
+struct RestaurantVisitDescription {
   var spot: String
-  var tipAmount: String!
-  var total: String!
+  var tipAmountText: String!
+  var totalText: String!
   func save() -> Void {
-    print("saving visit")
+
+    print("saving visit", spot, tipAmountText, totalText)
   }
 }
