@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a  nib.
     self.thisVisit = RestaurantVisit(name: "Eat@Joes", tip: self.tipRate, bill: 0.0)
+
   }
 
   override func didReceiveMemoryWarning() {
@@ -40,7 +41,8 @@ class ViewController: UIViewController {
   }
 
   @IBAction func onTap(_ sender: Any) {
-    view.endEditing(true)
+    //uncomment to hide numeric keyboard
+    //view.endEditing(true)
   }
 
   @IBAction func inputChanged(_ sender: Any) {
@@ -72,7 +74,6 @@ class ViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    print("view will appear")
     let tipRate = UserDefaults.standard.double(forKey: "tip_rate")
     switch tipRate {
     case 0.15:

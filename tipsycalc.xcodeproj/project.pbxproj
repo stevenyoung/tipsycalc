@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B043DBBF1F4BFDBF00F87ADA /* RestaurantVisit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B043DBBE1F4BFDBF00F87ADA /* RestaurantVisit.swift */; };
 		B043DBC31F4E647E00F87ADA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B043DBC21F4E647E00F87ADA /* SettingsViewController.swift */; };
+		B043DBC51F4E8D1600F87ADA /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = B043DBC41F4E8D1600F87ADA /* readme.md */; };
+		B043DBC71F4EA12000F87ADA /* tipsycalc.gif in Resources */ = {isa = PBXBuildFile; fileRef = B043DBC61F4EA12000F87ADA /* tipsycalc.gif */; };
 		B0B80C7D1F3B97A900F9DEF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B80C7C1F3B97A900F9DEF3 /* AppDelegate.swift */; };
 		B0B80C7F1F3B97A900F9DEF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B80C7E1F3B97A900F9DEF3 /* ViewController.swift */; };
 		B0B80C821F3B97A900F9DEF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B80C801F3B97A900F9DEF3 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		B043DBBE1F4BFDBF00F87ADA /* RestaurantVisit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantVisit.swift; sourceTree = "<group>"; };
 		B043DBC21F4E647E00F87ADA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
+		B043DBC41F4E8D1600F87ADA /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = readme.md; path = ../readme.md; sourceTree = "<group>"; };
+		B043DBC61F4EA12000F87ADA /* tipsycalc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tipsycalc.gif; sourceTree = "<group>"; };
 		B0B80C791F3B97A900F9DEF3 /* tipsycalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipsycalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B80C7C1F3B97A900F9DEF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B80C7E1F3B97A900F9DEF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 		B0B80C7B1F3B97A900F9DEF3 /* tipsycalc */ = {
 			isa = PBXGroup;
 			children = (
+				B043DBC41F4E8D1600F87ADA /* readme.md */,
+				B043DBC61F4EA12000F87ADA /* tipsycalc.gif */,
 				B043DBC21F4E647E00F87ADA /* SettingsViewController.swift */,
 				B0B80C7C1F3B97A900F9DEF3 /* AppDelegate.swift */,
 				B0B80C7E1F3B97A900F9DEF3 /* ViewController.swift */,
@@ -243,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B80C8A1F3B97A900F9DEF3 /* LaunchScreen.storyboard in Resources */,
+				B043DBC71F4EA12000F87ADA /* tipsycalc.gif in Resources */,
 				B0B80C871F3B97A900F9DEF3 /* Assets.xcassets in Resources */,
 				B0B80C821F3B97A900F9DEF3 /* Main.storyboard in Resources */,
 			);
@@ -273,6 +280,7 @@
 				B0B80C7F1F3B97A900F9DEF3 /* ViewController.swift in Sources */,
 				B0B80C851F3B97A900F9DEF3 /* tipsycalc.xcdatamodeld in Sources */,
 				B043DBC31F4E647E00F87ADA /* SettingsViewController.swift in Sources */,
+				B043DBC51F4E8D1600F87ADA /* readme.md in Sources */,
 				B0B80C7D1F3B97A900F9DEF3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
