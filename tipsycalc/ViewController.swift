@@ -71,6 +71,24 @@ class ViewController: UIViewController {
     splitByThree.text = String(format: "$%.2f", total / 3)
     splitByFour.text = String(format: "$%.2f", total / 4)
     splitByFive.text = String(format: "$%.2f", total / 5)
+
+    self.saveBillAmount()
+  }
+
+
+  private func saveBillAmount() {
+    let defaults = UserDefaults.standard
+    let billValue = Double(billField.text!) ?? 0
+    defaults.set(billValue, forKey: "billAmount")
+    print("saving billAmount: ", billValue)
+    defaults.synchronize()
+  }
+
+  private func getSavedBillAmount() -> Double {
+    let defaults = UserDefaults.standard
+    let value = defaults.double(forKey: "billAmount")
+    print("get bill Amount: ", value)
+    return value
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -91,8 +109,7 @@ class ViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     print("view did appear")
-    //    let defaults = UserDefaults.standard
-    //    let tip_rate = defaults.double(forKey: "tip_rate")
+    self.getSavedBillAmount()
     self.calculateTip()
   }
 

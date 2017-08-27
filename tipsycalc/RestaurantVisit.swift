@@ -50,5 +50,19 @@ class RestaurantVisit: NSObject, NSCoding {
     static let tip = "tip"
     static let bill = "bill"
   }
+
+  static func saveBillAmountToDefaults(billValue: Double=0.0) {
+    let defaults = UserDefaults.standard
+    defaults.set(billValue, forKey: "billAmount")
+    print("saving billAmount: ", billValue)
+    defaults.synchronize()
+  }
+
+  static func getSavedBillAmountFromDefaults() -> Double {
+    let defaults = UserDefaults.standard
+    let value = defaults.double(forKey: "billAmount")
+    print("get bill Amount: ", value)
+    return value
+  }
 }
 
