@@ -117,25 +117,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pP-s5-kWl">
-                                <rect key="frame" x="294" y="110" width="46" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="bill total?" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o8x-dy-8H2">
+                                <rect key="frame" x="66" y="110" width="268" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
                                 <connections>
-                                    <action selector="saveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nKM-44-sdZ"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" placeholder="bill total?" clearsOnBeginEditing="YES" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="vhJ-1J-gIp" customClass="BillAmount" customModule="tipsycalc" customModuleProvider="target">
-                                <rect key="frame" x="55" y="83" width="177" height="82"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="36"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <connections>
-                                    <action selector="inputChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="agv-ka-5NB"/>
+                                    <action selector="billFieldUpdate:" destination="BYZ-38-t0r" eventType="editingChanged" id="B4V-7i-hFs"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -153,7 +142,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="billField" destination="vhJ-1J-gIp" id="grd-AI-7eL"/>
+                        <outlet property="billField" destination="o8x-dy-8H2" id="KeO-ad-apu"/>
                         <outlet property="splitByFive" destination="FZe-c2-KJg" id="Vot-NM-9Lj"/>
                         <outlet property="splitByFour" destination="aQJ-6j-jEx" id="P6L-TA-6FL"/>
                         <outlet property="splitByThree" destination="XHg-1v-f2R" id="iaj-62-Rpp"/>
@@ -170,7 +159,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="962.31884057971024" y="143.47826086956522"/>
+            <point key="canvasLocation" x="960.79999999999995" y="143.47826086956522"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="vBy-Wa-WDd">

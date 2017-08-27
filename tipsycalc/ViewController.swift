@@ -45,9 +45,10 @@ class ViewController: UIViewController {
     //view.endEditing(true)
   }
 
-  @IBAction func inputChanged(_ sender: Any) {
-    self.calculateTip()
+  @IBAction func billFieldUpdate(_ sender: Any) {
+     self.calculateTip()
   }
+
 
   @IBAction func tipRateRadioUpdate(_ sender: Any) {
     self.calculateTip()
@@ -92,7 +93,7 @@ class ViewController: UIViewController {
     print("view did appear")
     //    let defaults = UserDefaults.standard
     //    let tip_rate = defaults.double(forKey: "tip_rate")
-
+    self.calculateTip()
   }
 
   override func viewWillDisappear(_ animated: Bool) {
