@@ -38,9 +38,8 @@ class SettingsViewController: UIViewController {
   }
 
   private func updateTipSetting() {
-    let index = tipControl.selectedSegmentIndex
-    let tipRate = RestaurantVisit.tipPercentages[index]
-    UserDefaults.standard.set(tipRate, forKey: "tipRate")
+    let rate = RestaurantVisit.tipPercentages[tipControl.selectedSegmentIndex]
+    UserDefaults.standard.set(rate, forKey: "tipRate")
   }
 
   override func viewDidLoad() {
@@ -55,6 +54,7 @@ class SettingsViewController: UIViewController {
 
 
   override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     let tipRate = UserDefaults.standard.double(forKey: "tipRate")
     switch tipRate {
     case 0.15:
@@ -64,7 +64,7 @@ class SettingsViewController: UIViewController {
     case 0.2:
       tipControl.selectedSegmentIndex = 2
     default:
-      print(UserDefaults.standard.double(forKey: "tipRate"))
+      print("tipRate:", UserDefaults.standard.double(forKey: "tipRate"))
     }
   }
   // MARK: - Navigation
@@ -81,7 +81,4 @@ class SettingsViewController: UIViewController {
     self.updateTipSetting()
     tipView.tipRate = UserDefaults.standard.double(forKey: "tipRate")
   }
-  
-  
-  
 }

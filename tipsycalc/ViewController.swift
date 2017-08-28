@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a  nib.
     self.thisVisit = RestaurantVisit(name: "Eat@Joes", tip: self.tipRate, bill: 0.0)
-
+    self.billField.becomeFirstResponder()
   }
 
   override func didReceiveMemoryWarning() {
@@ -75,20 +75,15 @@ class ViewController: UIViewController {
     self.saveBillAmount()
   }
 
-
   private func saveBillAmount() {
     let defaults = UserDefaults.standard
     let billValue = Double(billField.text!) ?? 0
     defaults.set(billValue, forKey: "billAmount")
-    print("saving billAmount: ", billValue)
     defaults.synchronize()
   }
 
   private func getSavedBillAmount() -> Double {
-    let defaults = UserDefaults.standard
-    let value = defaults.double(forKey: "billAmount")
-    print("get bill Amount: ", value)
-    return value
+    return UserDefaults.standard.double(forKey: "billAmount")
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -108,7 +103,6 @@ class ViewController: UIViewController {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    print("view did appear")
     self.getSavedBillAmount()
     self.calculateTip()
   }
@@ -128,7 +122,9 @@ class ViewController: UIViewController {
     let bill = Double(self.billField.text!)
     let visit = RestaurantVisit(name: "Eat@Joes", tip: tip, bill: bill)
     print("saving visit", visit ?? "not?")
-    let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(visit, toFile: RestaurantVisit.ArchiveURL.path)
+    let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(
+      visit,
+      toFile: RestaurantVisit.ArchiveURL.path)
     if isSuccessfulSave {
       os_log("visit saved", log: OSLog.default, type: .debug)
     } else {
