@@ -11,16 +11,36 @@ import UIKit
 class SettingsViewController: UIViewController {
 
   var defaultTipRate: Double = 0.0
+  var defaultThemeTitle: String = "Light"
+
   @IBOutlet weak var tipControl: UISegmentedControl!
+  @IBOutlet weak var themeControl: UISegmentedControl!
 
   @IBAction func handleTipControlUpdate(_ sender: Any) {
     self.updateTipSetting()
   }
 
+  @IBAction func handleThemeControlChange(_ sender: Any) {
+    self.updateSelectedTheme()
+  }
+
+  private func updateSelectedTheme() {
+    let themeValues: [String] = ["dark", "light"]
+    print("theme", themeValues[themeControl.selectedSegmentIndex])
+    switch themeValues[themeControl.selectedSegmentIndex] {
+    case "dark":
+      Theme.dark.apply()
+    case "light":
+      Theme.light.apply()
+    default:
+      Theme.default.apply()
+    }
+  }
+
   private func updateTipSetting() {
     let index = tipControl.selectedSegmentIndex
     let tipRate = RestaurantVisit.tipPercentages[index]
-    UserDefaults.standard.set(tipRate, forKey: "tip_rate")
+    UserDefaults.standard.set(tipRate, forKey: "tipRate")
   }
 
   override func viewDidLoad() {
@@ -35,7 +55,7 @@ class SettingsViewController: UIViewController {
 
 
   override func viewDidAppear(_ animated: Bool) {
-    let tipRate = UserDefaults.standard.double(forKey: "tip_rate")
+    let tipRate = UserDefaults.standard.double(forKey: "tipRate")
     switch tipRate {
     case 0.15:
       tipControl.selectedSegmentIndex = 0
@@ -44,8 +64,7 @@ class SettingsViewController: UIViewController {
     case 0.2:
       tipControl.selectedSegmentIndex = 2
     default:
-      print(UserDefaults.standard.double(forKey: "tip_rate"))
-
+      print(UserDefaults.standard.double(forKey: "tipRate"))
     }
   }
   // MARK: - Navigation
@@ -60,7 +79,7 @@ class SettingsViewController: UIViewController {
         fatalError("Unexpected destination: \(segue.destination)")
     }
     self.updateTipSetting()
-    tipView.tipRate = UserDefaults.standard.double(forKey: "tip_rate")
+    tipView.tipRate = UserDefaults.standard.double(forKey: "tipRate")
   }
   
   

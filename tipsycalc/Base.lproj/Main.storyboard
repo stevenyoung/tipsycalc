@@ -193,16 +193,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uQy-eh-ZTP">
+                                <rect key="frame" x="95" y="397" width="185" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Dark Theme"/>
+                                    <segment title="Light Theme"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handleThemeControlChange:" destination="NLZ-jN-ZMt" eventType="valueChanged" id="h20-1j-Seg"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwO-ga-wGO">
+                                <rect key="frame" x="134" y="353" width="106" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="themeControl" destination="uQy-eh-ZTP" id="PI6-XO-jzI"/>
                         <outlet property="tipControl" destination="IXa-ox-hV5" id="KT7-CM-Hhv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckR-c1-peh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1672.5" y="129.5"/>
+            <point key="canvasLocation" x="1671.2" y="129.08545727136433"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tnd-ft-SFJ">

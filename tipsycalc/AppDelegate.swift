@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    print(Theme.current.mainColor)
+//    Theme.current.apply()
     return true
   }
 
@@ -45,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print("app became active")
     let defaults = UserDefaults.standard
     let lastRunValues = defaults.dictionaryWithValues(forKeys: [
-      "resetTimeStamp", "billAmount"])
+      "resetTimeStamp", "billAmount", "tipRate"])
     print("last run: ", lastRunValues)
     let resetTime = lastRunValues["resetTimeStamp"] as! Date
     if (Date() > resetTime) {
