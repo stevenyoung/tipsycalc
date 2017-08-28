@@ -93,7 +93,7 @@ class ViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    let tipRate = UserDefaults.standard.double(forKey: "tip_rate")
+    let tipRate = UserDefaults.standard.double(forKey: "tipRate")
     switch tipRate {
     case 0.15:
       tipControl.selectedSegmentIndex = 0
@@ -102,7 +102,7 @@ class ViewController: UIViewController {
     case 0.2:
       tipControl.selectedSegmentIndex = 2
     default:
-      print(UserDefaults.standard.double(forKey: "tip_rate"))
+      print("tipRate:", UserDefaults.standard.double(forKey: "tipRate"))
     }
   }
 
