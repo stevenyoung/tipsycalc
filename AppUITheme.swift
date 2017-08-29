@@ -41,10 +41,20 @@ enum Theme: Int {
     }
   }
 
-  func apply() {
+  func apply(view: UIView) {
     UserDefaults.standard.set(rawValue, forKey: Keys.selectedTheme)
     UserDefaults.standard.synchronize()
-//    UIApplication.shared.delegate?.window??.tintColor = mainColor
-//    UIApplication.shared.delegate?.window??.backgroundColor = backGroundColor
+    print("theme apply", view)
+    let theme: String = UserDefaults.standard.string(forKey: Keys.selectedTheme)!
+    if (theme == "1") {
+      view.backgroundColor = UIColor.darkText
+      view.tintColor = UIColor.lightText
+    } else {
+      view.backgroundColor = UIColor.white
+      view.tintColor = UIColor(red: 0.0/255.0,
+                               green: 122.0/255.0,
+                               blue: 255.0/255.0,
+                               alpha: 1.0)
+    }
   }
 }

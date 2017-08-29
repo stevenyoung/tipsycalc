@@ -11,16 +11,22 @@ import os.log
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var tipLabel: UILabel!
   @IBOutlet weak var tipAmount: UILabel!
-  @IBOutlet weak var totalLabel: UILabel!
+  @IBOutlet weak var totalDisplay: UILabel!
   @IBOutlet weak var billField: UITextField!
   @IBOutlet weak var tipControl: UISegmentedControl!
 
+  @IBOutlet weak var totalLabel: UILabel!
   @IBOutlet weak var splitByTwo: UILabel!
   @IBOutlet weak var splitByThree: UILabel!
-
   @IBOutlet weak var splitByFour: UILabel!
   @IBOutlet weak var splitByFive: UILabel!
+  @IBOutlet weak var splitByTwoLabel: UILabel!
+  @IBOutlet weak var splitByThreeLabel: UILabel!
+  @IBOutlet weak var splitByFourLabel: UILabel!
+  @IBOutlet weak var splitByFiveLabel: UILabel!
+
   @IBAction func saveButton(_ sender: Any) {
     self.saveRestaurantVisit()
   }
@@ -31,7 +37,6 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a  nib.
-    self.thisVisit = RestaurantVisit(name: "Eat@Joes", tip: self.tipRate, bill: 0.0)
     self.billField.becomeFirstResponder()
   }
 
@@ -61,12 +66,8 @@ class ViewController: UIViewController {
     let tip = billValue * tipRate
     let total = billValue + tip
 
-    self.thisVisit.tipAmount = tip
-    self.thisVisit.billAmount = total
-    self.thisVisit.tipRate = tipRate
-
     tipAmount.text = String(format: "$%.2f", tip)
-    totalLabel.text = String(format: "$%.2f", total)
+    totalDisplay.text = String(format: "$%.2f", total)
     splitByTwo.text = String(format: "$%.2f", total / 2 )
     splitByThree.text = String(format: "$%.2f", total / 3)
     splitByFour.text = String(format: "$%.2f", total / 4)
@@ -99,11 +100,11 @@ class ViewController: UIViewController {
     default:
       print("tipRate:", UserDefaults.standard.double(forKey: "tipRate"))
     }
+    self.updateSelectedTheme()
   }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    self.getSavedBillAmount()
     self.calculateTip()
   }
 
@@ -131,6 +132,46 @@ class ViewController: UIViewController {
       os_log("failed to save visit", log: OSLog.default, type: .debug)
     }
     //    visit.save()
+  }
+
+  private func updateSelectedTheme() {
+    let themeValues: [String] = ["dark", "light"]
+    let selectThemed = UserDefaults.standard.integer(forKey: "SelectedTheme")
+    print("current", UserDefaults.standard.integer(forKey: "SelectedTheme"))
+    switch themeValues[selectThemed - 1] {
+    case "dark":
+      Theme.dark.apply(view: self.view)
+      self.tipLabel.textColor = UIColor.lightText
+      self.tipAmount.textColor = UIColor.lightText
+      self.totalDisplay.textColor = UIColor.lightText
+      self.splitByTwo.textColor = UIColor.lightText
+      self.splitByThree.textColor = UIColor.lightText
+      self.splitByFour.textColor = UIColor.lightText
+      self.splitByFive.textColor = UIColor.lightText
+      self.totalLabel.textColor = UIColor.lightText
+      self.splitByTwoLabel.textColor = UIColor.lightText
+      self.splitByThreeLabel.textColor = UIColor.lightText
+      self.splitByFourLabel.textColor = UIColor.lightText
+      self.splitByFiveLabel.textColor = UIColor.lightText
+
+    case "light":
+      Theme.light.apply(view: self.view)
+      self.tipLabel.textColor = UIColor.darkText
+      self.tipAmount.textColor = UIColor.darkText
+      self.totalDisplay.textColor = UIColor.darkText
+      self.splitByTwo.textColor = UIColor.darkText
+      self.splitByThree.textColor = UIColor.darkText
+      self.splitByFour.textColor = UIColor.darkText
+      self.splitByFive.textColor = UIColor.darkText
+      self.totalLabel.textColor = UIColor.darkText
+      self.splitByTwoLabel.textColor = UIColor.darkText
+      self.splitByThreeLabel.textColor = UIColor.darkText
+      self.splitByFourLabel.textColor = UIColor.darkText
+      self.splitByFiveLabel.textColor = UIColor.darkText
+      
+    default:
+      Theme.default.apply(view: self.view)
+    }
   }
 }
 

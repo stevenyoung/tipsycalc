@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1u5-eL-cSF">
-                                <rect key="frame" x="69" y="297" width="38" height="21"/>
+                                <rect key="frame" x="69" y="297" width="103" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -71,14 +71,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/ 5 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlt-eT-G7h">
-                                <rect key="frame" x="232" y="413" width="46" height="21"/>
+                                <rect key="frame" x="232" y="413" width="36" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/ 4 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlH-QT-6JP">
-                                <rect key="frame" x="232" y="373" width="46" height="21"/>
+                                <rect key="frame" x="232" y="373" width="36" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -144,12 +144,18 @@
                     <connections>
                         <outlet property="billField" destination="o8x-dy-8H2" id="KeO-ad-apu"/>
                         <outlet property="splitByFive" destination="FZe-c2-KJg" id="Vot-NM-9Lj"/>
+                        <outlet property="splitByFiveLabel" destination="hlt-eT-G7h" id="Rqv-uG-jNm"/>
                         <outlet property="splitByFour" destination="aQJ-6j-jEx" id="P6L-TA-6FL"/>
+                        <outlet property="splitByFourLabel" destination="AlH-QT-6JP" id="nOa-3L-FWA"/>
                         <outlet property="splitByThree" destination="XHg-1v-f2R" id="iaj-62-Rpp"/>
+                        <outlet property="splitByThreeLabel" destination="tpT-Un-8LA" id="s55-fU-syp"/>
                         <outlet property="splitByTwo" destination="tju-Uu-jC6" id="dhV-eP-Yim"/>
+                        <outlet property="splitByTwoLabel" destination="8cN-90-LiU" id="OMd-jc-daH"/>
                         <outlet property="tipAmount" destination="s3G-kS-TAn" id="4t5-Jj-6G4"/>
                         <outlet property="tipControl" destination="wIG-m9-Vsx" id="urR-Ej-oH2"/>
-                        <outlet property="totalLabel" destination="eDp-XL-res" id="k8j-v6-4yb"/>
+                        <outlet property="tipLabel" destination="WS1-mo-CDh" id="9GH-6U-Ueo"/>
+                        <outlet property="totalDisplay" destination="eDp-XL-res" id="eGj-sQ-HZU"/>
+                        <outlet property="totalLabel" destination="1u5-eL-cSF" id="fGG-a9-tM5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -215,7 +221,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="rateControlLabel" destination="Glr-Mc-74R" id="amX-DI-ecf"/>
                         <outlet property="themeControl" destination="uQy-eh-ZTP" id="PI6-XO-jzI"/>
+                        <outlet property="themeControlLabel" destination="ZwO-ga-wGO" id="tJC-cC-Nrg"/>
                         <outlet property="tipControl" destination="IXa-ox-hV5" id="KT7-CM-Hhv"/>
                     </connections>
                 </viewController>

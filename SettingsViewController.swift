@@ -16,6 +16,9 @@ class SettingsViewController: UIViewController {
   @IBOutlet weak var tipControl: UISegmentedControl!
   @IBOutlet weak var themeControl: UISegmentedControl!
 
+  @IBOutlet weak var rateControlLabel: UILabel!
+  @IBOutlet weak var themeControlLabel: UILabel!
+
   @IBAction func handleTipControlUpdate(_ sender: Any) {
     self.updateTipSetting()
   }
@@ -26,14 +29,19 @@ class SettingsViewController: UIViewController {
 
   private func updateSelectedTheme() {
     let themeValues: [String] = ["dark", "light"]
-    print("theme", themeValues[themeControl.selectedSegmentIndex])
     switch themeValues[themeControl.selectedSegmentIndex] {
     case "dark":
-      Theme.dark.apply()
+      Theme.dark.apply(view: self.view)
+      self.themeControlLabel.textColor = UIColor.lightText
+      self.rateControlLabel.textColor = UIColor.lightText
+
     case "light":
-      Theme.light.apply()
+      Theme.light.apply(view: self.view)
+      self.themeControlLabel.textColor = UIColor.darkText
+      self.rateControlLabel.textColor = UIColor.darkText
+
     default:
-      Theme.default.apply()
+      Theme.default.apply(view: self.view)
     }
   }
 
@@ -65,6 +73,11 @@ class SettingsViewController: UIViewController {
       tipControl.selectedSegmentIndex = 2
     default:
       print("tipRate:", UserDefaults.standard.double(forKey: "tipRate"))
+    }
+
+    let selectedTheme = UserDefaults.standard.integer(forKey: "SelectedTheme")
+    if (selectedTheme > 0) {
+      themeControl.selectedSegmentIndex = selectedTheme - 1
     }
   }
   // MARK: - Navigation
