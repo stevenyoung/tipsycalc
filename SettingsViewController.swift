@@ -79,6 +79,7 @@ class SettingsViewController: UIViewController {
     if (selectedTheme > 0) {
       themeControl.selectedSegmentIndex = selectedTheme - 1
     }
+    self.updateSelectedTheme()
   }
   // MARK: - Navigation
 
