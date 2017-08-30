@@ -153,6 +153,9 @@ class ViewController: UIViewController {
       self.splitByThreeLabel.textColor = UIColor.lightText
       self.splitByFourLabel.textColor = UIColor.lightText
       self.splitByFiveLabel.textColor = UIColor.lightText
+      self.billField.textColor = UIColor.lightText
+      self.billField.backgroundColor = UIColor.darkText
+      self.billField.keyboardAppearance = UIKeyboardAppearance.dark
 
     case "light":
       Theme.light.apply(view: self.view)
@@ -168,6 +171,9 @@ class ViewController: UIViewController {
       self.splitByThreeLabel.textColor = UIColor.darkText
       self.splitByFourLabel.textColor = UIColor.darkText
       self.splitByFiveLabel.textColor = UIColor.darkText
+      self.billField.textColor = UIColor.darkText
+      self.billField.backgroundColor = UIColor.lightText
+      self.billField.keyboardAppearance = UIKeyboardAppearance.light
       
     default:
       Theme.default.apply(view: self.view)
