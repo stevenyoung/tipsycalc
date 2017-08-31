@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B025F0AC1F56832800091DFA /* tipsycalc.gif in Resources */ = {isa = PBXBuildFile; fileRef = B025F0AB1F56832800091DFA /* tipsycalc.gif */; };
+		B02768661F57CA6400682923 /* tipsycalc.gif in Resources */ = {isa = PBXBuildFile; fileRef = B02768651F57CA6400682923 /* tipsycalc.gif */; };
 		B043DBBF1F4BFDBF00F87ADA /* RestaurantVisit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B043DBBE1F4BFDBF00F87ADA /* RestaurantVisit.swift */; };
 		B043DBC31F4E647E00F87ADA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B043DBC21F4E647E00F87ADA /* SettingsViewController.swift */; };
 		B043DBC51F4E8D1600F87ADA /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = B043DBC41F4E8D1600F87ADA /* readme.md */; };
@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B025F0AB1F56832800091DFA /* tipsycalc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tipsycalc.gif; sourceTree = "<group>"; };
+		B02768651F57CA6400682923 /* tipsycalc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tipsycalc.gif; sourceTree = "<group>"; };
 		B043DBBE1F4BFDBF00F87ADA /* RestaurantVisit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantVisit.swift; sourceTree = "<group>"; };
 		B043DBC21F4E647E00F87ADA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
 		B043DBC41F4E8D1600F87ADA /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
@@ -118,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				B02768641F57BB2700682923 /* Resources */,
+				B02768651F57CA6400682923 /* tipsycalc.gif */,
 				B073C7BA1F53CB8E00F30084 /* AppUITheme.swift */,
 				B043DBC21F4E647E00F87ADA /* SettingsViewController.swift */,
 				B0B80C7C1F3B97A900F9DEF3 /* AppDelegate.swift */,
@@ -128,7 +129,6 @@
 				B0B80C8B1F3B97A900F9DEF3 /* Info.plist */,
 				B0B80C831F3B97A900F9DEF3 /* tipsycalc.xcdatamodeld */,
 				B043DBBE1F4BFDBF00F87ADA /* RestaurantVisit.swift */,
-				B025F0AB1F56832800091DFA /* tipsycalc.gif */,
 			);
 			path = tipsycalc;
 			sourceTree = "<group>";
@@ -260,7 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B80C8A1F3B97A900F9DEF3 /* LaunchScreen.storyboard in Resources */,
-				B025F0AC1F56832800091DFA /* tipsycalc.gif in Resources */,
+				B02768661F57CA6400682923 /* tipsycalc.gif in Resources */,
 				B0B80C871F3B97A900F9DEF3 /* Assets.xcassets in Resources */,
 				B0B80C821F3B97A900F9DEF3 /* Main.storyboard in Resources */,
 			);
