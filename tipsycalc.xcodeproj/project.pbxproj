@@ -86,6 +86,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B02768641F57BB2700682923 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		B0B80C701F3B97A900F9DEF3 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +117,7 @@
 		B0B80C7B1F3B97A900F9DEF3 /* tipsycalc */ = {
 			isa = PBXGroup;
 			children = (
+				B02768641F57BB2700682923 /* Resources */,
 				B073C7BA1F53CB8E00F30084 /* AppUITheme.swift */,
 				B043DBC21F4E647E00F87ADA /* SettingsViewController.swift */,
 				B0B80C7C1F3B97A900F9DEF3 /* AppDelegate.swift */,

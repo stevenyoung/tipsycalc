@@ -38,6 +38,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a  nib.
     self.billField.becomeFirstResponder()
+    self.billField.borderStyle = UITextBorderStyle.roundedRect
   }
 
   override func didReceiveMemoryWarning() {
@@ -66,7 +67,11 @@ class ViewController: UIViewController {
     let tip = billValue * tipRate
     let total = billValue + tip
 
-    tipAmount.text = String(format: "$%.2f", tip)
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    if let formattedTipAmount = formatter.string(from: tip as NSNumber) {
+      tipAmount.text = formattedTipAmount
+    }
     totalDisplay.text = String(format: "$%.2f", total)
     splitByTwo.text = String(format: "$%.2f", total / 2 )
     splitByThree.text = String(format: "$%.2f", total / 3)
